@@ -14,6 +14,7 @@ public class CalculadoraController {
     private final CalculadoraService service;
 
     public CalculadoraController(CalculadoraService service) {
+
         this.service = service;
     }
 
@@ -34,6 +35,8 @@ public class CalculadoraController {
         } catch (Exception e) {
             erro = e.getMessage();
         }
+        // model é um objeto que carrega dados no controller para view,
+        // seria como o tranporte de dados
         model.addAttribute("resultado", resultado);
         model.addAttribute("erro", erro);
         model.addAttribute("valor1", valor1);
