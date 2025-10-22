@@ -12,6 +12,8 @@ public class CalculadoraService {
         BigDecimal v1 = toBigDecimal(valor1);
         BigDecimal v2 = toBigDecimal(valor2);
 
+        // aqui eu retorno os valores de uma forma nova do switch
+        // é como se fosse isso  resultado = v1.add(v2);
         return  switch (operacao) {
             case "soma" -> v1.add(v2);
             case "subtracao" -> v1.subtract(v2);
@@ -32,6 +34,7 @@ public class CalculadoraService {
     private BigDecimal toBigDecimal(String valor){
         String aux = valor.trim().replace(",", ".");
         try {
+            // aqui eu converto string em valor para poder fazer o cálculo
           return new BigDecimal(aux);
         } catch (Exception e) {
             throw new IllegalArgumentException("O valor deve ser númerico");

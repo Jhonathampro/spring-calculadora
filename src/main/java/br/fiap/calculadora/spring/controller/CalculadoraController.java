@@ -11,8 +11,10 @@ import java.math.BigDecimal;
 @Controller
 public class CalculadoraController {
 
+    // Injeção de Dependência (Dependency Injection)
     private final CalculadoraService service;
-
+   // Em vez de você mesmo criar o objeto (new CalculadoraService())
+    // você deixa o Spring criar e entregar pra você.
     public CalculadoraController(CalculadoraService service) {
 
         this.service = service;
